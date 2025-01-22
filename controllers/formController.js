@@ -5,7 +5,7 @@ const addNewMessage = (messages) => (req, res) => {
     user: author,
     added: new Date(),
   });
-  res.render("form");
+  res.redirect("/");
 };
 
 module.exports = { addNewMessage };
