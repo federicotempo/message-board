@@ -2,6 +2,7 @@
  An interactive message board built with Express and EJS. Users can post messages in real time. Clean, modular design with reusable components for dynamic content rendering.
 
 ## Live preview
+https://yelling-louisette-federicotempo-1e87d4c3.koyeb.app/
 
 ## Views, Router, and Controller
 Views: The project consists of two views (form.ejs and index.ejs). form.ejs is used for the form where users can submit new messages, and index.ejs is used to display the message board with all the messages.
