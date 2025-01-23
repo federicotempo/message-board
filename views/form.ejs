@@ -3,31 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="form.css" />
     <title>New Message</title>
   </head>
   <body>
-    <h1>Create a new message</h1>
-
+    <header>
+      <h1>Create a new message</h1>
+    </header>
     <form method="POST" action="/new">
-      <label for="author">Autor:</label>
+      <label for="author">Author:</label>
       <input
         type="text"
         id="author"
         name="author"
         placeholder="Write your name..."
+        maxlength="50"
         required
       />
-
-      <label for="message">Message</label>
-      <input
-        type="text"
+      <label for="message">Message:</label>
+      <textarea
         id="message"
         name="message"
         placeholder="Write your message..."
+        maxlength="200"
         required
-      />
-
-      <button type="submit">Send</button>
+      ></textarea>
+      <div class="form-buttons">
+        <a href="/"
+          ><button type="button" id="back-btn">Back to Messages</button></a
+        >
+        <button type="submit">Send</button>
+      </div>
     </form>
   </body>
 </html>

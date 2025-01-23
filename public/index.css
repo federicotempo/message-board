@@ -3,9 +3,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #0a0f1a; /* Azul más oscuro */
-  color: #d1d1d1; /* Gris claro */
-  overflow-x: hidden; /* Evitar scroll horizontal */
+  background-color: #0a0f1a;
+  color: #d1d1d1;
+  overflow-x: hidden;
 }
 
 header {
@@ -13,9 +13,9 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #141d2b; /* Azul más oscuro */
-  border-bottom: 1px solid #2a3a4f; /* Azul intermedio */
-  margin-bottom: 1rem; /* Separar el contenido del header hacia abajo */
+  background-color: #141d2b;
+  border-bottom: 1px solid #2a3a4f;
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -26,49 +26,50 @@ h1 {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
-  background-color: #2a3a4f; /* Azul intermedio */
-  color: #d1d1d1; /* Gris claro */
+  background-color: #2a3a4f;
+  color: #d1d1d1;
   border: none;
   border-radius: 0.25rem;
 }
 
 #add-message-btn:hover {
-  background-color: #3b4d66; /* Azul más claro */
+  background-color: #3b4d66;
 }
 
 .message-board {
   display: flex;
-  flex-direction: column; /* Mostrar mensajes en filas secuenciales */
+  flex-direction: column;
   gap: 1rem;
   padding: 1rem;
-  align-items: center; /* Centrar las cards */
+  align-items: center;
 }
 
 .message-card {
-  background-color: #141d2b; /* Azul más oscuro */
-  border: 1px solid #2a3a4f; /* Azul intermedio */
+  background-color: #141d2b;
+  border: 1px solid #2a3a4f;
   border-radius: 0.25rem;
-  padding: 1rem; /* Reducir padding */
-  width: 90%; /* Ajustar ancho para permitir agrupamiento */
-  max-width: 500px; /* Limitar el ancho máximo */
+  padding: 1rem;
+  width: 90%;
+  max-width: 500px;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  word-break: break-word;
 }
 
 .message-card h3 {
   margin: 0;
-  font-size: 1.2rem; /* Reducir tamaño de fuente */
-  color: #d1d1d1; /* Gris claro */
-  margin-bottom: 0.5rem; /* Separar verticalmente */
+  font-size: 1.2rem;
+  color: #d1d1d1;
+  margin-bottom: 0.5rem;
 }
 
 .message-card p {
   margin: 0;
-  font-size: 1.1rem; /* Reducir tamaño de fuente */
-  color: #d1d1d1; /* Gris claro */
-  margin-bottom: 0.5rem; /* Separar verticalmente */
+  font-size: 1.1rem;
+  color: #d1d1d1;
+  margin-bottom: 0.5rem;
 }
 
 .message-item {
@@ -78,9 +79,9 @@ h1 {
 }
 
 .message-date {
-  font-size: 1rem; /* Reducir tamaño de fuente */
-  color: #8a9bb0; /* Azul claro */
-  margin-bottom: 0.5rem; /* Separar verticalmente */
+  font-size: 1rem;
+  color: #8a9bb0;
+  margin-bottom: 0.5rem;
 }
 
 .pagination {
@@ -94,12 +95,12 @@ h1 {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
-  background-color: #2a3a4f; /* Azul intermedio */
-  color: #d1d1d1; /* Gris claro */
+  background-color: #2a3a4f;
+  color: #d1d1d1;
   border: none;
   border-radius: 0.25rem;
 }
 
 .pagination button:disabled {
-  background-color: #3b4d66; /* Azul más claro */
+  background-color: #3b4d66;
 }

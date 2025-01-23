@@ -10,7 +10,7 @@ const messages = [
     added: new Date(),
   },
   {
-    text: "Good morning everyone! Hope you all have a fantastic day ahead.",
+    text: "Good morning! Hope you all have a fantastic day ahead.",
     user: "Jessica",
     added: new Date(),
   },

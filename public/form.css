@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #0a0f1a;
+  color: #d1d1d1;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #141d2b;
+  border-bottom: 1px solid #2a3a4f;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #141d2b;
+  border: 1px solid #2a3a4f;
+  border-radius: 0.25rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+label {
+  font-size: 1.2rem;
+  color: #d1d1d1;
+}
+
+input[type="text"],
+textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #2a3a4f;
+  border-radius: 0.25rem;
+  background-color: #0a0f1a;
+  color: #d1d1d1;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-buttons a,
+.form-buttons button {
+  flex: 1;
+  padding: 0.5rem; 
+  font-size: 1rem; 
+  cursor: pointer;
+  background-color: #2a3a4f;
+  color: #d1d1d1;
+  border: none;
+  border-radius: 0.25rem;
+  text-align: center;
+}
+
+.form-buttons a:hover,
+.form-buttons button:hover {
+  background-color: #3b4d66;
+}
+
+#back-btn {
+  background-color: #2a3a4f;
+  color: #d1d1d1;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem; 
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+
+#back-btn:hover {
+  background-color: #3b4d66;
+}
