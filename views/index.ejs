@@ -3,20 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
     <title>Messages</title>
   </head>
   <body>
-    <h1>Messages</h1>
-    <% messages.forEach(message => { %>
-    <ul>
-      <h3>User:</h3>
-      <li><%= message.user %></li>
-      <h3>Text:</h3>
-      <li><%= message.text %></li>
-      <h3>Added:</h3>
-      <li><%= message.added %></li>
-      <br />
-    </ul>
-    <% }); %>
+    <header>
+      <h1>Message Board</h1>
+      <a href="/new"><button id="add-message-btn">New Message</button></a>
+    </header>
+    <div class="message-board" id="message-board">
+      <% messages.slice().reverse().forEach((message, index) => { %>
+      <div class="message-card">
+        <div class="message-item">
+          <h3 class="message-user" id="user-<%= index %>"><%= message.user %></h3>
+        </div>
+        <div class="message-item">
+          <p><%= message.text %></p>
+        </div>
+        <div class="message-item">
+          <p class="message-date"><%= new Date(message.added).toLocaleDateString('en-GB', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }).replace(',', '') %></p>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+    <div class="pagination">
+      <button id="prev-btn" disabled>Previous</button>
+      <button id="next-btn">Next</button>
+    </div>
+    <script src="randomColor.js"></script>
+    <script src="pagination.js"></script>
   </body>
 </html>
