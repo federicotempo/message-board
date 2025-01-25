@@ -8,7 +8,10 @@
             "name": "postgre_DB",
             "database": "koyebdb",
             "username": "koyeb-adm",
-            "password": "npg_LGdWS8Ux4jpv"
+            "password": "npg_LGdWS8Ux4jpv",
+            "ssl": {
+                "rejectUnauthorized": false
+            }
         }
     ]
 }

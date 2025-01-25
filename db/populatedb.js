@@ -19,7 +19,10 @@ async function main() {
   console.log("seeding...");
   const client = new Client({
     connectionString:
-      "postgresql://koyeb-adm:npg_LGdWS8Ux4jpv@ep-royal-frog-a2bgp2s2.eu-central-1.pg.koyeb.app:5432/koyebdb",
+      "postgresql://koyeb-adm:npg_LGdWS8Ux4jpv@ep-royal-frog-a2bgp2s2.eu-central-1.pg.koyeb.app:5432/koyebdb?sslmode=require",
+    ssl: {
+      rejectUnauthorized: false,
+    },
   });
 
   try {
