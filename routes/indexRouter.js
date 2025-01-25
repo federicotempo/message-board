@@ -1,17 +1,17 @@
 const { Router } = require("express");
-const { addNewMessage } = require("../controllers/formController");
-const messages = require("../db")
+const {
+  addNewMessage,
+  showMessage,
+  renderForm,
+  validateMessage
+} = require("../controllers/formController");
 
 indexRouter = Router();
 
-indexRouter.get("/", (req, res) => {
-  res.render("index", { messages });
-});
+indexRouter.get("/", showMessage);
 
-indexRouter.get("/new", (req, res) => {
-  res.render("form");
-});
+indexRouter.get("/new", renderForm);
 
-indexRouter.post("/new", addNewMessage(messages));
+indexRouter.post("/new", validateMessage, addNewMessage);
 
 module.exports = indexRouter;
