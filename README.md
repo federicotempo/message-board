@@ -12,11 +12,18 @@ Router: The indexRouter.js file in the routes directory handles the routing for 
 Controller: The formController.js file in the controllers directory contains the logic for handling form submissions, including validation and adding new messages to the message list.
 
 Features
-Real-time Messaging: Users can post messages that are displayed in real time.
-Responsive Design: The message board is fully responsive and works on all device sizes.
-Pagination: Messages are paginated to improve readability and navigation.
-Random User Colors: Each user's name is displayed in a random color for better visual distinction.
-Form Validation: Input fields for author name and message content are validated to ensure proper length and format.
-Navigation: Easy navigation with buttons to post new messages and return to the message board.
+
 Database Integration: A PostgreSQL database has been incorporated to store and retrieve messages. This enhances data persistence and scalability. Messages are now stored securely in the database, ensuring they remain available even after server restarts. The database integration allows for more advanced features like efficient pagination and future analytics.
+
+Real-time Messaging: Users can post messages that are displayed in real time.
+
+Responsive Design: The message board is fully responsive and works on all device sizes.
+
+Pagination: Messages are paginated to improve readability and navigation.
+
+Random User Colors: Each user's name is displayed in a random color for better visual distinction.
+
+Form Validation: Input fields for author name and message content are validated to ensure proper length and format.
+
+Navigation: Easy navigation with buttons to post new messages and return to the message board.
 
