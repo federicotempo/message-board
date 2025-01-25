@@ -2,13 +2,13 @@
     "sqltools.connections": [
         {
             "previewLimit": 50,
-            "server": "localhost",
+            "server": "ep-royal-frog-a2bgp2s2.eu-central-1.pg.koyeb.app",
             "port": 5432,
             "driver": "PostgreSQL",
             "name": "postgre_DB",
-            "database": "message_board",
-            "username": "postgres",
-            "password": "fedet9898"
+            "database": "koyebdb",
+            "username": "koyeb-adm",
+            "password": "npg_LGdWS8Ux4jpv"
         }
     ]
 }

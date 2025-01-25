@@ -19,7 +19,7 @@ async function main() {
   console.log("seeding...");
   const client = new Client({
     connectionString:
-      "postgresql://postgres:fedet9898@localhost:5432/message_board",
+      "postgresql://koyeb-adm:npg_LGdWS8Ux4jpv@ep-royal-frog-a2bgp2s2.eu-central-1.pg.koyeb.app:5432/koyebdb",
   });
 
   try {
