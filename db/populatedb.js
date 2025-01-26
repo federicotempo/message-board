@@ -5,14 +5,15 @@ CREATE TABLE IF NOT EXISTS messages (
   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   text VARCHAR ( 200 ),
   "user" VARCHAR ( 50 ),
+  country VARCHAR ( 50 ), -- Nueva columna para el país
   added TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO messages (text, "user") 
+INSERT INTO messages (text, "user", country) 
 VALUES
-  ('Hi there! How are you doing today?', 'Bryan'),
-  ('Hello World! This is a great day to learn something new.', 'Odin'),
-  ('Good morning! Hope you all have a fantastic day ahead.', 'Damon');
+  ('Hi there! How are you doing today?', 'Bryan', 'US'),
+  ('Hello World! This is a great day to learn something new.', 'Odin', 'NO'),
+  ('Good morning! Hope you all have a fantastic day ahead.', 'Damon', 'GB');
 `;
 
 async function main() {

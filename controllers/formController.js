@@ -1,4 +1,5 @@
 const db = require("../db/queries");
+const geoip = require("geoip-lite");
 const { check, validationResult } = require("express-validator");
 
 const validateMessage = [
@@ -29,7 +30,20 @@ async function addNewMessage(req, res) {
       return res.status(400).send("Both 'text' and 'user' are required.");
     }
 
-    await db.insertMessage(message);
+    let ip = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+    console.log("Original IP Address:", ip);
+
+    if (ip === "::1" || ip === "127.0.0.1") {
+      ip = "8.8.8.8";
+    }
+
+    console.log("IP Address for Geo Lookup:", ip);
+    const geo = geoip.lookup(ip);
+    console.log("Geo Info:", geo);
+    const country = geo ? geo.country : "Unknown";
+    console.log("Country:", country);
+
+    await db.insertMessage({ ...message, country });
     res.redirect("/");
   } catch (error) {
     console.error("Error adding new message:", error.message);

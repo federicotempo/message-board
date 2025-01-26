@@ -1,10 +1,11 @@
 const pool = require("./pool");
 
-async function insertMessage({ text, user }) {
+async function insertMessage({ text, user, country }) {
   try {
-    await pool.query('INSERT INTO messages (text, "user") VALUES ($1, $2)', [
+    await pool.query('INSERT INTO messages (text, "user", country) VALUES ($1, $2, $3)', [
       text,
       user,
+      country,
     ]);
     console.log("Message inserted successfully!");
   } catch (error) {

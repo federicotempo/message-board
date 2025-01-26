@@ -1,5 +1,5 @@
-import { getRandomColor } from './randomColor.js';
-import { setupPagination } from './pagination.js';
+import { getRandomColor } from "./randomColor.js";
+import { setupPagination } from "./pagination.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const loadingElement = document.getElementById("loading");
@@ -12,43 +12,55 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadingElement.style.display = "none";
     messagesElement.style.display = "block";
 
-    messages.slice().reverse().forEach((message, index) => {
-      const messageCard = document.createElement("div");
-      messageCard.className = "message-card";
+    messages
+      .slice()
+      .reverse()
+      .forEach((message, index) => {
+        const messageCard = document.createElement("div");
+        messageCard.className = "message-card";
 
-      const userElement = document.createElement("h3");
-      userElement.className = "message-user";
-      userElement.id = `user-${index}`;
-      userElement.textContent = message.user;
+        const userElement = document.createElement("h3");
+        userElement.className = "message-user";
+        userElement.id = `user-${index}`;
+        userElement.textContent = message.user;
 
-      const textElement = document.createElement("p");
-      textElement.textContent = message.text;
+        const countryElement = document.createElement("img");
+        countryElement.className = "message-country";
+        countryElement.src = `https://flagcdn.com/16x12/${message.country.toLowerCase()}.png`;
+        countryElement.alt = message.country;
 
-      const dateElement = document.createElement("p");
-      dateElement.className = "message-date";
-      dateElement.textContent = new Date(message.added).toLocaleDateString('en-GB', {
-        hour: '2-digit',
-        minute: '2-digit',
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-      }).replace(',', '');
+        const userContainer = document.createElement("div");
+        userContainer.className = "user-container";
+        userContainer.appendChild(countryElement);
+        userContainer.appendChild(userElement);
 
-      messageCard.appendChild(userElement);
-      messageCard.appendChild(textElement);
-      messageCard.appendChild(dateElement);
+        const textElement = document.createElement("p");
+        textElement.textContent = message.text;
 
-      messagesElement.appendChild(messageCard);
-    });
+        const dateElement = document.createElement("p");
+        dateElement.className = "message-date";
+        dateElement.textContent = new Date(message.added)
+          .toLocaleDateString("en-GB", {
+            hour: "2-digit",
+            minute: "2-digit",
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric",
+          })
+          .replace(",", "");
 
-    // Aplica colores aleatorios a los usuarios
+        messageCard.appendChild(userContainer);
+        messageCard.appendChild(textElement);
+        messageCard.appendChild(dateElement);
+
+        messagesElement.appendChild(messageCard);
+      });
+
     document.querySelectorAll(".message-user").forEach((user) => {
       user.style.color = getRandomColor();
     });
 
-    // Implementa la paginación
     setupPagination(messages, 4);
-
   } catch (error) {
     loadingElement.textContent = "Failed to load messages.";
   }
