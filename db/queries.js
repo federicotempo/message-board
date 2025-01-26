@@ -17,6 +17,7 @@ async function insertMessage({ text, user, country }) {
 async function selectMessages() {
   try {
     const messages = await pool.query("SELECT * FROM messages");
+    console.log("Messages selected successfully:", messages.rows);
     return messages.rows;
   } catch (error) {
     console.error("Error selecting messages", error.message);

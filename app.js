@@ -1,8 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const path = require("node:path");
 
 const app = express();
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 8000;
+
+console.log("Database Host:", process.env.DATABASE_HOST);
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -14,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const indexRouter = require("./routes/indexRouter");
-const messagesRouter = require("./routes/messagesRouter")
+const messagesRouter = require("./routes/messagesRouter");
 
 app.use("/", indexRouter);
 app.use("/api", messagesRouter);
