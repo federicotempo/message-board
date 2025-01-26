@@ -13,7 +13,7 @@ async function insertMessage({ text, user }) {
   }
 }
 
-async function selectMessage() {
+async function selectMessages() {
   try {
     const messages = await pool.query("SELECT * FROM messages");
     return messages.rows;
@@ -25,5 +25,5 @@ async function selectMessage() {
 
 module.exports = {
   insertMessage,
-  selectMessage,
+  selectMessages,
 };

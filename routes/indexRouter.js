@@ -1,17 +1,16 @@
 const { Router } = require("express");
 const {
   addNewMessage,
-  showMessage,
+  renderIndexPage,
   renderForm,
   validateMessage
 } = require("../controllers/formController");
 
 indexRouter = Router();
 
-indexRouter.get("/", showMessage);
+indexRouter.get("/", renderIndexPage);
 
 indexRouter.get("/new", renderForm);
-
 indexRouter.post("/new", validateMessage, addNewMessage);
 
 module.exports = indexRouter;

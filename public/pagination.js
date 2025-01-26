@@ -1,15 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const messagesPerPage = 4; // Cambiar a 4 mensajes por página
+function setupPagination(messages, messagesPerPage) {
   let currentPage = 1;
-  const messages = Array.from(document.querySelectorAll(".message-card"));
   const totalPages = Math.ceil(messages.length / messagesPerPage);
 
   function showPage(page) {
-    messages.forEach((message, index) => {
-      message.style.display =
-        index >= (page - 1) * messagesPerPage && index < page * messagesPerPage
-          ? "block"
-          : "none";
+    const start = (page - 1) * messagesPerPage;
+    const end = start + messagesPerPage;
+    document.querySelectorAll(".message-card").forEach((message, index) => {
+      message.style.display = index >= start && index < end ? "block" : "none";
     });
     updatePaginationButtons(page);
   }
@@ -36,4 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   showPage(currentPage);
-});
+}
+
+export { setupPagination };

@@ -14,8 +14,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const indexRouter = require("./routes/indexRouter");
+const messagesRouter = require("./routes/messagesRouter")
 
 app.use("/", indexRouter);
+app.use("/api", messagesRouter);
 
 app.listen(PORT, () => {
   console.log(`message-board app - listening on port http://localhost:${PORT}`);

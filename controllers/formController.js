@@ -37,13 +37,15 @@ async function addNewMessage(req, res) {
   }
 }
 
-async function showMessage(req, res) {
+async function getMessages(req, res) {
   try {
-    const messages = await db.selectMessage();
-    res.render("index", { messages });
+    const messages = await db.selectMessages();
+    res.json(messages);
   } catch (error) {
-    console.error("Error rendering index page", error.message);
-    res.status(500).send("An error occurred while rendering index page");
+    console.error("Error fetching messages:", error.message);
+    res
+      .status(500)
+      .json({ error: "An error occurred while fetching messages." });
   }
 }
 
@@ -51,4 +53,14 @@ const renderForm = (req, res) => {
   res.render("form");
 };
 
-module.exports = { addNewMessage, showMessage, renderForm, validateMessage };
+async function renderIndexPage(req, res) {
+  res.render("index");
+}
+
+module.exports = {
+  addNewMessage,
+  renderForm,
+  renderIndexPage,
+  getMessages,
+  validateMessage,
+};

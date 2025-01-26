@@ -14,8 +14,4 @@ function getRandomColor() {
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".message-user").forEach((user) => {
-    user.style.color = getRandomColor();
-  });
-});
+export { getRandomColor };

@@ -11,32 +11,14 @@
       <h1>Message Board</h1>
       <a href="/new"><button id="add-message-btn">New Message</button></a>
     </header>
-    <div class="message-board" id="message-board">
-      <% messages.slice().reverse().forEach((message, index) => { %>
-      <div class="message-card">
-        <div class="message-item">
-          <h3 class="message-user" id="user-<%= index %>">
-            <%= message.user %>
-          </h3>
-        </div>
-        <div class="message-item">
-          <p><%= message.text %></p>
-        </div>
-        <div class="message-item">
-          <p class="message-date">
-            <%= new Date(message.added).toLocaleDateString('en-GB', { hour:
-            '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit',
-            year: 'numeric' }).replace(',', '') %>
-          </p>
-        </div>
-      </div>
-      <% }); %>
-    </div>
+    <div id="loading">Loading messages, please wait...</div>
+    <div class="message-board" id="messages"></div>
     <div class="pagination">
       <button id="prev-btn" disabled>Previous</button>
       <button id="next-btn">Next</button>
     </div>
-    <script src="randomColor.js"></script>
-    <script src="pagination.js"></script>
+    <script type="module" src="randomColor.js"></script>
+    <script type="module" src="pagination.js"></script>
+    <script type="module" src="messages.js"></script>
   </body>
 </html>
